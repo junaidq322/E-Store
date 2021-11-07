@@ -1,0 +1,131 @@
+footer {
+  grid-area: footer;
+  /* background-color: #203040; */
+  background-color: #203040;
+  color: #ffffff;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.socialsa {
+  width: 45px;
+  height: 45px;
+  display: inline-block;
+  margin-right: 10px;
+  background: #364a62;
+}
+.socialsai {
+  font-size: 22px;
+  padding: 11px 15px;
+  color: #bebebe;
+}
+body {
+  font-family: poppins;
+  margin: 0;
+  display: grid;
+  font-size: 14px;
+}
+header p {
+  padding: 50px;
+  text-align: center;
+  color: #bebebe;
+  text-transform: uppercase;
+  font-size: 65px;
+  font-weight: 700;
+}
+
+.footer > * {
+  flex: 1 100%;
+}
+
+.lfooter {
+  margin-right: 1.25em;
+  margin-left: 20px;
+  margin-bottom: 2em;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer li {
+  line-height: 2em;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.rfooter {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 100px;
+}
+
+img.logo {
+  height: 80px;
+  width: 25%;
+}
+.rfooter > * {
+  flex: 1 50%;
+  margin-right: 1.25em;
+}
+
+.boxa {
+  color: #999;
+}
+
+.hbox {
+  column-count: 1;
+  column-gap: 1.25em;
+}
+.ybox {
+  column-gap: 1.25em;
+}
+.bfooter {
+  text-align: center;
+  color: #999;
+  padding-top: 8px;
+  font-size: 17px;
+}
+
+.lfooterp {
+  padding-right: 20%;
+  color: #999;
+}
+
+@media screen and (min-width: 600px) {
+  .rfooter > * {
+    flex: 1;
+  }
+  .socials2 {
+    flex-grow: 1;
+  }
+  .features {
+    flex-grow: 1;
+  }
+  .privacy {
+    flex-grow: 1;
+  }
+  .system {
+    flex-grow: 1;
+  }
+  .lfooter {
+    flex: 1 0px;
+  }
+
+  .rfooter {
+    flex: 2 0px;
+  }
+}
