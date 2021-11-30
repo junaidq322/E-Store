@@ -8,7 +8,7 @@ import { detailsUser, updateUser } from "../Store/actions/userActions";
 import Loading from "../Components/Loading";
 import Error from "../Components/Error";
 import { ToastContainer, toast } from "react-toastify";
-  import "react-toastify/dist/ReactToastify.css";
+import "react-toastify/dist/ReactToastify.css";
 import {
   USER_DETAILS_RESET,
   USER_UPDATE_PROFILE_RESET,

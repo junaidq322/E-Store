@@ -90,7 +90,7 @@ export default function ProductDetailsScreen(props) {
   //const {id}=props;
   //alert(id);
   const [qty, setQty] = useState(1);
-  const productInfo = useSelector((state) => state.productDeatils);
+  const productInfo = useSelector((state) => state.productDetails);
   const productList = useSelector((state) => state.productList);
   const { products } = productList;
   const { loading, error, product } = productInfo;

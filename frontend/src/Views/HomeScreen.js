@@ -4,7 +4,7 @@ import Error from "../Components/Error";
 import Product from "../Components/Product/Product";
 import { useDispatch, useSelector } from "react-redux";
 import { listProducts } from "../Store/actions/productActions";
-import { useAuth0 } from "@auth0/auth0-react";
+import CarouselComponent from "../Components/CarouselComponent";
 
 function HomeScreen() {
   const productList = useSelector((state) => state.productList);
@@ -12,13 +12,12 @@ function HomeScreen() {
   //const [loading, setLoading] = useState(false);
   //const { error, products } = productList;
   const [data, setData] = useState([]);
-  const {isLoading}=useAuth0();
   const dispatch = useDispatch();
   useEffect(() => {
     try {
       //setLoading(true);
       setData(products);
-      dispatch(listProducts());
+      dispatch(listProducts({}));
     } catch (e) {
       console.log(e);
     }
@@ -34,6 +33,7 @@ function HomeScreen() {
         <Error variant="danger"></Error>
       ) : (
         <div className="row center">
+          <CarouselComponent />
           {console.log(products)}
           {products.map((product) => (
             <Product key={product._id} product={product}></Product>

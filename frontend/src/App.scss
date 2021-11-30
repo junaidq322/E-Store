@@ -14,7 +14,10 @@ $fontSerif: "Droid Serif", serif;
 * {
   box-sizing: border-box;
 }
-
+$color-alpha: #1772FF;
+$color-form-highlight: #EEEEEE;
+$base-spacing-unit: 24px;
+$half-spacing-unit: $base-spacing-unit / 2;
 
 .cf:before,
 .cf:after {
@@ -319,4 +322,8 @@ a.remove {
     width: 100%;
     text-align: center;
   }
+}
+.table {
+	width:100%;
+	border:1px solid $color-form-highlight;
 }

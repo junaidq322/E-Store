@@ -3,17 +3,26 @@ import thunk from "redux-thunk";
 import { cartReducer } from "./Store/reducers/cartReducers";
 import {
   orderCreateReducer,
+  orderDeleteReducer,
   orderDetailReducer,
   orderListReducer,
+  ordersListReducer,
 } from "./Store/reducers/orderReducers";
 import {
+  productCategoryListReducer,
+  productCreateReducer,
+  productDeleteReducer,
   productDetailsReducer,
   productListReducer,
+  productUpdateReducer,
 } from "./Store/reducers/productReducers";
 import {
+  userDeleteReducer,
   userDetailsReducer,
   userRegisterReducer,
   userSigninReducer,
+  usersListReducer,
+  userUpdateInAdminReducer,
   userUpdateReducer,
 } from "./Store/reducers/userReducers";
 
@@ -35,7 +44,7 @@ const initialState = {
 };
 const reducer = combineReducers({
   productList: productListReducer,
-  productDeatils: productDetailsReducer,
+  productDetails: productDetailsReducer,
   cart: cartReducer,
   orderCreate: orderCreateReducer,
   orderDetail: orderDetailReducer,
@@ -43,7 +52,16 @@ const reducer = combineReducers({
   userRegister: userRegisterReducer,
   orderHistory: orderListReducer,
   userDetails: userDetailsReducer,
-  userUpdate: userUpdateReducer
+  userUpdate: userUpdateReducer,
+  productCreate: productCreateReducer,
+  productUpdate: productUpdateReducer,
+  productDelete: productDeleteReducer,
+  orderList: ordersListReducer,
+  orderDelete: orderDeleteReducer,
+  userList: usersListReducer,
+  userDelete: userDeleteReducer,
+  userUpdateAdmin: userUpdateInAdminReducer,
+  productCategoryList: productCategoryListReducer
 });
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
