@@ -1,7 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import styled from "styled-components";
 import { createProduct } from "../Store/actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../Store/constants/productConstants";
@@ -31,13 +30,13 @@ function CreateProductScreen(props) {
   const [brand, setBrand] = useState("");
   const [description, setDescription] = useState("");
   const dispatch = useDispatch();
-  const productCreate = useSelector((state) => state.productCreate);
-  const {
+  //const productCreate = useSelector((state) => state.productCreate);
+  /*const {
     loading: loadingCreate,
     error: errorCreate,
     success: successCreate,
     product: createdProduct,
-  } = productCreate;
+  } = productCreate;*/
 
   const submitHandler = (e) => {
     e.preventDefault();

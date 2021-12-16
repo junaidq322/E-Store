@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Grid, TextField, InputAdornment } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useState } from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
@@ -10,7 +10,6 @@ import Error from "../Components/Error";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
-  USER_DETAILS_RESET,
   USER_UPDATE_PROFILE_RESET,
 } from "../Store/constants/userConstants";
 const Button = styled.button`

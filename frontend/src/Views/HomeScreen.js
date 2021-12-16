@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Loading from "../Components/Loading";
 import Error from "../Components/Error";
 import Product from "../Components/Product/Product";
@@ -11,12 +11,9 @@ function HomeScreen() {
   const {loading,error,products}=productList;
   //const [loading, setLoading] = useState(false);
   //const { error, products } = productList;
-  const [data, setData] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {
     try {
-      //setLoading(true);
-      setData(products);
       dispatch(listProducts({}));
     } catch (e) {
       console.log(e);
@@ -24,7 +21,7 @@ function HomeScreen() {
     finally{
       //setLoading(false);
     }
-  }, []);
+  }, [dispatch]);
   return (
     <div>
       {loading ? (

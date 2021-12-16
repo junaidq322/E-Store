@@ -3,12 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { detailsProduct } from "../Store/actions/productActions";
 import Loading from "../Components/Loading";
 import Error from "../Components/Error";
-import data from "../data";
 import styled from "styled-components";
 import Rating from "../Components/Rating/Rating";
 import Product from "../Components/Product/Product";
 import  Carousel  from "react-elastic-carousel";
-import { useParams } from "react-router";
 
 const Details = styled.div`
   display: flex;
@@ -110,7 +108,7 @@ export default function ProductDetailsScreen(props) {
       ) : (
         <Details key={product._id}>
           <div className="big-img">
-            <img src={product.image} />
+            <img src={product.image} alt="Imag"/>
           </div>
 
           <Box>

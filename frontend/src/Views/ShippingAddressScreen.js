@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import CheckoutSteps from "../Components/CheckoutSteps";
 import { saveShippingAddress } from "../Store/actions/cartActions";
 import styled from "styled-components";
-import Select, { components } from "react-select";
 import countryList from "react-select-country-list";
 const Button = styled.button`
   border: none;

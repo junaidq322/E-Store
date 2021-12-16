@@ -1,10 +1,17 @@
 import "./App.css";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route} from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Components/Footer/Footer";
 import Loading from "./Components/Loading";
+import { useSelector } from "react-redux";
+import { ConditionallyRender } from "react-util-kit";
+import Chatbot from "react-chatbot-kit";
+import config from "./Chatbot/Config";
+import ActionProvider from "./Chatbot/ActionProvider";
+import MessageParser from "./Chatbot/MessageParser";
+import "react-chatbot-kit/build/main.css";
 /*import HomeScreen from "./Views/HomeScreen";
 import ProductDetailsScreen from "./Views/ProductDetailsScreen";
 import AboutScreen from "./Views/AboutScreen";
@@ -50,9 +57,62 @@ const CreateProductScreen = lazy(() => import("./Views/CreateProductScreen"));
 const ProductEditScreen = lazy(() => import("./Views/ProductEditScreen"));
 const UserEditScreen = lazy(() => import("./Views/UserEditScreen"));
 const SearchScreen = lazy(() => import("./Views/SearchScreen"));
+
 function App() {
+  const [showChatbot, toggleChatbot] = useState(false);
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
   return (
     <BrowserRouter>
+      {userInfo && !userInfo.isAdmin && !userInfo.isSeller && (
+        <div className="App">
+          <header>
+            <div className="bot">
+              <ConditionallyRender
+                ifTrue={showChatbot}
+                show={
+                  <Chatbot
+                    config={config}
+                    messageParser={MessageParser}
+                    actionProvider={ActionProvider}
+                  />
+                }
+              />
+              <button
+                className="app-chatbot-button"
+                onClick={() => toggleChatbot((prev) => !prev)}
+              >
+                <div className="Strongbot">E-Bot</div>
+              </button>
+            </div>
+          </header>
+        </div>
+      )}
+      {!userInfo && (
+        <div className="App">
+          <header>
+            <div className="bot">
+              <ConditionallyRender
+                ifTrue={showChatbot}
+                show={
+                  <Chatbot
+                    config={config}
+                    messageParser={MessageParser}
+                    actionProvider={ActionProvider}
+                  />
+                }
+              />
+              <button
+                className="app-chatbot-button"
+                onClick={() => toggleChatbot((prev) => !prev)}
+              >
+                <div className="Strongbot">E-Bot</div>
+              </button>
+            </div>
+          </header>
+        </div>
+      )}
+
       <div className="grid-container">
         <Header />
         <main>

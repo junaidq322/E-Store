@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Rating from '../Rating/Rating';
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../Store/actions/cartActions';
 const Card = styled.div`
@@ -38,7 +37,6 @@ export default function Product(props) {
   const { product } = props;
   const dispatch=useDispatch();
   const [qty,setQty]=useState(1);
-  const history = useHistory();
   const addToCartHandler =()=>{
     dispatch(addToCart(product._id, qty));
     setQty(qty+1);

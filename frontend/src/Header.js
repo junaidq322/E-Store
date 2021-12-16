@@ -7,13 +7,11 @@ import {
   Form,
   FormControl,
   NavDropdown,
-  FormGroup,
-  Col,
 } from "react-bootstrap";
 import { FaShoppingCart } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { useDispatch, useSelector } from "react-redux";
-import { Link,Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Loading from "./Components/Loading";
 import styled from "styled-components";
 import { signout } from "./Store/actions/userActions";

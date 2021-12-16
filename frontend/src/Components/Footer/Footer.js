@@ -1,6 +1,6 @@
 import React from "react";
 import foot from "./Footer.module.css";
-import { FaFacebook, FaTwitter, FaPinterest, FaDribbble } from "react-icons/fa";
+import { FaFacebook, FaPinterest, FaDribbble } from "react-icons/fa";
 function Footer() {
   return (
     <div className={foot.footercontainer}>
