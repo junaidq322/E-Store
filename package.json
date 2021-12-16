@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "cd frontend && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
@@ -21,6 +22,10 @@
   "devDependencies": {
     "eslint": "^8.1.0",
     "eslint-plugin-react": "^7.26.1"
+  },
+  "engines": {
+    "node": "12.4.0",
+    "npm":"6.9.0"
   },
   "description": ""
 }
