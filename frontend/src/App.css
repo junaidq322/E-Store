@@ -360,7 +360,7 @@ button:hover {
   color: #ffffff;
   border-radius: 50%;
   padding: 0.2rem 0.7rem;
-  font-size: 0.2rem;
+  font-size: 0.75rem;
   margin-left: 0.2rem;
 }
 .checkout-steps > div {
